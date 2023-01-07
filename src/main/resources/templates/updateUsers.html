@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Измените форму</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/admin/changeUser/{id}(id=${user.id})}" th:object="${user}">
+
+    <div>
+        <label for="firstName">Имя</label>
+        <input type="text" th:field="*{name}" id="firstName">
+        <br>
+        <label for="lastName">Фамилия</label>
+        <input type="text" th:field="*{lastName}" id="lastName">
+        <br>
+        <label for="email">Почта</label>
+        <input type="text" th:field="*{email}" id="email">
+        <br>
+        <label for="username">Логин</label>
+        <input type="text" th:field="*{username}" id="username">
+        <br>
+        <label for="password">Пароль</label>
+        <input type="text" th:field="*{password}" id="password">
+        <br>
+        <input type="submit" value="Изменить"/>
+    </div>
+</form>
+</body>
+</html>
